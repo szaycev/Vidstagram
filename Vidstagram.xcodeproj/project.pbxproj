@@ -16,6 +16,12 @@
 		B922CB7925E006D400F52380 /* LoginViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B922CB7825E006D400F52380 /* LoginViewProtocol.swift */; };
 		B922CB7C25E016CE00F52380 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B922CB7B25E016CE00F52380 /* GoogleService-Info.plist */; };
 		B922CB8025E03E4A00F52380 /* LoginPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B922CB7F25E03E4A00F52380 /* LoginPresenterProtocol.swift */; };
+		B922CB8725E0AC8200F52380 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B922CB8525E0AC8200F52380 /* PostsTableViewController.swift */; };
+		B922CB8825E0AC8200F52380 /* PostsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B922CB8625E0AC8200F52380 /* PostsTableViewController.xib */; };
+		B922CB8C25E0ACB400F52380 /* PostsSceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B922CB8B25E0ACB400F52380 /* PostsSceneBuilder.swift */; };
+		B922CB9025E0AD2C00F52380 /* PostsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B922CB8F25E0AD2C00F52380 /* PostsPresenter.swift */; };
+		B922CB9325E0AD8200F52380 /* PostsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B922CB9225E0AD8200F52380 /* PostsPresenterProtocol.swift */; };
+		B922CB9625E0AE5600F52380 /* PostsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B922CB9525E0AE5600F52380 /* PostsViewProtocol.swift */; };
 		B95AB02125DED1680048564B /* LoginSceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95AB02025DED1680048564B /* LoginSceneBuilder.swift */; };
 		B99465AA25DECADD00A74A4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99465A925DECADD00A74A4F /* AppDelegate.swift */; };
 		B99465AC25DECADD00A74A4F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99465AB25DECADD00A74A4F /* SceneDelegate.swift */; };
@@ -30,6 +36,12 @@
 		B922CB7825E006D400F52380 /* LoginViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewProtocol.swift; sourceTree = "<group>"; };
 		B922CB7B25E016CE00F52380 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B922CB7F25E03E4A00F52380 /* LoginPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterProtocol.swift; sourceTree = "<group>"; };
+		B922CB8525E0AC8200F52380 /* PostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
+		B922CB8625E0AC8200F52380 /* PostsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsTableViewController.xib; sourceTree = "<group>"; };
+		B922CB8B25E0ACB400F52380 /* PostsSceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsSceneBuilder.swift; sourceTree = "<group>"; };
+		B922CB8F25E0AD2C00F52380 /* PostsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsPresenter.swift; sourceTree = "<group>"; };
+		B922CB9225E0AD8200F52380 /* PostsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsPresenterProtocol.swift; sourceTree = "<group>"; };
+		B922CB9525E0AE5600F52380 /* PostsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewProtocol.swift; sourceTree = "<group>"; };
 		B95AB02025DED1680048564B /* LoginSceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneBuilder.swift; sourceTree = "<group>"; };
 		B99465A625DECADD00A74A4F /* Vidstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vidstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B99465A925DECADD00A74A4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +70,43 @@
 			children = (
 				B922CB7525E004B100F52380 /* LoginPresenter.swift */,
 				B922CB7F25E03E4A00F52380 /* LoginPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B922CB8325E0AC3D00F52380 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				B922CB8425E0AC4C00F52380 /* View */,
+				B922CB8E25E0AD0F00F52380 /* Presenter */,
+				B922CB8A25E0AC8C00F52380 /* Builder */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		B922CB8425E0AC4C00F52380 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B922CB8525E0AC8200F52380 /* PostsTableViewController.swift */,
+				B922CB8625E0AC8200F52380 /* PostsTableViewController.xib */,
+				B922CB9525E0AE5600F52380 /* PostsViewProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B922CB8A25E0AC8C00F52380 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				B922CB8B25E0ACB400F52380 /* PostsSceneBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		B922CB8E25E0AD0F00F52380 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B922CB8F25E0AD2C00F52380 /* PostsPresenter.swift */,
+				B922CB9225E0AD8200F52380 /* PostsPresenterProtocol.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -108,6 +157,7 @@
 		B99465BE25DECB1800A74A4F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				B922CB8325E0AC3D00F52380 /* Posts */,
 				B99465BF25DECB2100A74A4F /* Login */,
 			);
 			path = Scenes;
@@ -211,6 +261,7 @@
 			files = (
 				B99465B625DECADD00A74A4F /* LaunchScreen.storyboard in Resources */,
 				B922CB7C25E016CE00F52380 /* GoogleService-Info.plist in Resources */,
+				B922CB8825E0AC8200F52380 /* PostsTableViewController.xib in Resources */,
 				B99465B325DECADD00A74A4F /* Assets.xcassets in Resources */,
 				B922CB6825DFF4BB00F52380 /* LoginViewController.xib in Resources */,
 			);
@@ -224,11 +275,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B922CB6725DFF4BB00F52380 /* LoginViewController.swift in Sources */,
+				B922CB8725E0AC8200F52380 /* PostsTableViewController.swift in Sources */,
 				B95AB02125DED1680048564B /* LoginSceneBuilder.swift in Sources */,
 				B99465AA25DECADD00A74A4F /* AppDelegate.swift in Sources */,
+				B922CB9625E0AE5600F52380 /* PostsViewProtocol.swift in Sources */,
+				B922CB8C25E0ACB400F52380 /* PostsSceneBuilder.swift in Sources */,
 				B99465AC25DECADD00A74A4F /* SceneDelegate.swift in Sources */,
 				B922CB7925E006D400F52380 /* LoginViewProtocol.swift in Sources */,
+				B922CB9325E0AD8200F52380 /* PostsPresenterProtocol.swift in Sources */,
 				B922CB7625E004B100F52380 /* LoginPresenter.swift in Sources */,
+				B922CB9025E0AD2C00F52380 /* PostsPresenter.swift in Sources */,
 				B922CB8025E03E4A00F52380 /* LoginPresenterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

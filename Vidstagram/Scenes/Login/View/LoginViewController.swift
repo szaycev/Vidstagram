@@ -20,8 +20,7 @@ class LoginViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func login(_ sender: UIButton) {
-        presenter.login(name: nameTextField.text,
-                        phone: phoneTextField.text)
+        presenter.login(name: nameTextField.text, phone: phoneTextField.text)
     }
     
     
@@ -31,6 +30,16 @@ class LoginViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
 }
 
 
@@ -39,5 +48,9 @@ extension LoginViewController: LoginViewProtocol {
    
     func showError() {
         //TODO: Implementation Error
+    }
+    
+    func presentPostsScene() {
+        navigationController?.pushViewController(PostsSceneBuilder.build(), animated: true)
     }
 }

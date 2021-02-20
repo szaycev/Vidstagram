@@ -18,7 +18,7 @@ class LoginPresenter: LoginPresenterProtocol {
             view?.showError()
             return
         }
-        print("name: \(name) phone: \(phone)")
+        view?.presentPostsScene()
     }
 }
 

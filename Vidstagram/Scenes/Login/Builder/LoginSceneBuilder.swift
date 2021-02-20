@@ -17,6 +17,8 @@ struct LoginSceneBuilder {
         presenter.view = viewController
         viewController.presenter = presenter
         
+        viewController.title = "Login"
+        
         return viewController
     }
 }
