@@ -15,6 +15,7 @@ struct LoginSceneBuilder {
         let presenter = LoginPresenter()
         
         presenter.view = viewController
+        presenter.authService = FirebaseAuthService()
         viewController.presenter = presenter
         
         viewController.title = "Login"

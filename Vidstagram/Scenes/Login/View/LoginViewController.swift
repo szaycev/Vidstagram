@@ -9,18 +9,19 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    //MARK: - Properties
+    //MARK: Injection
     var presenter: LoginPresenterProtocol!
     
     
-    //MARK: - Views
+    //MARK: - IBOutlets
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     
-    //MARK: - Actions
+    //MARK: - IBActions
     @IBAction func login(_ sender: UIButton) {
-        presenter.login(name: nameTextField.text, phone: phoneTextField.text)
+        presenter.login(with: nameTextField.text, phone: phoneTextField.text)
     }
     
     
@@ -45,9 +46,9 @@ class LoginViewController: UIViewController {
 
 //MARK: - Protocol Implementation
 extension LoginViewController: LoginViewProtocol {
-   
-    func showError() {
-        //TODO: Implementation Error
+    
+    func showError(message: String?) {
+        errorLabel.text = message
     }
     
     func presentPostsScene() {

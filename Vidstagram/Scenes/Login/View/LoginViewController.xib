@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Vidstagram" customModuleProvider="target">
             <connections>
+                <outlet property="errorLabel" destination="FLL-C2-aDO" id="dov-n0-irc"/>
                 <outlet property="nameTextField" destination="JD7-cS-u8U" id="pNn-a0-JKo"/>
                 <outlet property="phoneTextField" destination="4fs-s8-viM" id="2Ne-k3-Ysw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -20,18 +21,24 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLL-C2-aDO">
+                    <rect key="frame" x="40" y="264" width="334" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="1" green="0.35228742166662885" blue="0.30272019089916302" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cBz-VH-BRo">
                     <rect key="frame" x="60" y="390" width="294" height="116"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JD7-cS-u8U">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JD7-cS-u8U">
                             <rect key="frame" x="0.0" y="0.0" width="294" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="namePhonePad" textContentType="name"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4fs-s8-viM">
                             <rect key="frame" x="0.0" y="42" width="294" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtM-iI-yEB">
                             <rect key="frame" x="0.0" y="84" width="294" height="32"/>
@@ -58,7 +65,10 @@
             <constraints>
                 <constraint firstItem="cBz-VH-BRo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="4tI-kv-Itq"/>
                 <constraint firstItem="cBz-VH-BRo" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="KUp-Pt-AO3"/>
+                <constraint firstItem="FLL-C2-aDO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="etu-Ea-heB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cBz-VH-BRo" secondAttribute="trailing" constant="60" id="mxq-fH-rXG"/>
+                <constraint firstItem="FLL-C2-aDO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="220" id="oAp-tk-Bwu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FLL-C2-aDO" secondAttribute="trailing" constant="40" id="yCk-e5-dsl"/>
             </constraints>
             <point key="canvasLocation" x="-107" y="146"/>
         </view>

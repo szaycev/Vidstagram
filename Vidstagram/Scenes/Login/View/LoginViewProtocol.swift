@@ -8,6 +8,6 @@
 import Foundation
 
 protocol LoginViewProtocol: class {
-    func showError()
+    func showError(message: String?)
     func presentPostsScene()
 }
