@@ -24,10 +24,11 @@ class NewPostViewController: UIViewController {
     //MARK: - IBActions
     @IBAction func publishPost(_ sender: UIButton) {
         guard let creatorUID = Auth.auth().currentUser?.uid,
+              let creatorName = Auth.auth().currentUser?.displayName,
               let title = titleTextField.text else {
             return
         }
-        presenter.createPost(.init(creator: creatorUID, title: title))
+        presenter.createPost(.init(creator: creatorUID, creatorName: creatorName, title: title))
     }
     
     @IBAction func selectVideo(_ sender: UIButton) {

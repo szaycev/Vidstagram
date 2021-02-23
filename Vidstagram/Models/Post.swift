@@ -10,6 +10,7 @@ import Foundation
 struct Post {
     
     var creator: String
+    var creatorName: String
     var title: String
     
 //    enum CodingKeys: String, CodingKey {

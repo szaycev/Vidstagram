@@ -23,29 +23,25 @@ class PostsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        presenter.viewDidLoad()
     }
+    
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return presenter.posts.count
     }
     
-    /*
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-     
-     // Configure the cell...
-     
-     return cell
-     }
-     */
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let post = presenter.posts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.cellIdentifier, for: indexPath) as! PostTableViewCell
+        return cell.setup(from: post)
+    }
+    
     
     /*
      // Override to support conditional editing of the table view.
@@ -99,10 +95,14 @@ private extension PostsTableViewController {
     func setupViews() {
         navigationItem.setRightBarButton(.init(barButtonSystemItem: .add, target: self,
                                                action: #selector(presentNewPostScene)), animated: true)
+        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.cellIdentifier)
     }
 }
 
 //MARK: - Protocol Implementation
 extension PostsTableViewController: PostsViewProtocol {
     
+    func displayPosts() {
+        tableView.reloadData()
+    }
 }

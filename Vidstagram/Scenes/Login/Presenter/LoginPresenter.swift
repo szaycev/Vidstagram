@@ -27,7 +27,7 @@ class LoginPresenter: LoginPresenterProtocol {
             if let error = error as NSError?, let errorCode = AuthErrorCode(rawValue: error.code) {
                 switch errorCode {
                 case .userNotFound:
-                    self?.authService?.createUser(withEmail: generatedUserEmail, password: temporaryPassword) { createUserError in
+                    self?.authService?.createUser(withEmail: generatedUserEmail, password: temporaryPassword, fullname: fullName!) { createUserError in
                         if createUserError == nil {
                             self?.view?.presentPostsScene()
                         }

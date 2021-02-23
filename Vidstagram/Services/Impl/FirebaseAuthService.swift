@@ -10,9 +10,15 @@ import FirebaseAuth
 
 class FirebaseAuthService: AuthService {
     
-    func createUser(withEmail email: String, password: String, complition: @escaping (Error?) -> ()) {
+    func createUser(withEmail email: String, password: String, fullname: String, complition: @escaping (Error?) -> ()) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
-            complition(error)
+            if let result = result {
+                let profileChangeRequest = result.user.createProfileChangeRequest()
+                profileChangeRequest.displayName = fullname
+                profileChangeRequest.commitChanges { error in
+                    complition(error)
+                }
+            }
         }
     }
     

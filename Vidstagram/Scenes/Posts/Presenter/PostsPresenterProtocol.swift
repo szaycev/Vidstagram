@@ -8,5 +8,6 @@
 import Foundation
 
 protocol PostsPresenterProtocol: class {
-    
+    var posts: [PostPresentationModel] { get }
+    func viewDidLoad()
 }

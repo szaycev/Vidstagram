@@ -8,6 +8,6 @@
 import Foundation
 
 protocol AuthService: class {
-    func createUser(withEmail email: String, password: String, complition: @escaping (Error?) -> ())
+    func createUser(withEmail email: String, password: String, fullname: String, complition: @escaping (Error?) -> ())
     func signIn(withEmail email: String, password: String, complition: @escaping (Error?) -> ())
 }

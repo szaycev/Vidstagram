@@ -37,6 +37,9 @@
 		B922CBD725E4A38700F52380 /* NewPostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B922CBD625E4A38700F52380 /* NewPostPresenter.swift */; };
 		B922CBDA25E4A53800F52380 /* NewPostViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B922CBD925E4A53800F52380 /* NewPostViewProtocol.swift */; };
 		B922CBDD25E4A8A900F52380 /* NewPostPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B922CBDC25E4A8A900F52380 /* NewPostPresenterProtocol.swift */; };
+		B922CBE225E4E38100F52380 /* PostPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B922CBE125E4E38100F52380 /* PostPresentationModel.swift */; };
+		B922CBE625E4F58200F52380 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B922CBE525E4F58200F52380 /* PostTableViewCell.swift */; };
+		B922CBE925E5009200F52380 /* StringFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = B922CBE825E5009200F52380 /* StringFormater.swift */; };
 		B95AB02125DED1680048564B /* LoginSceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95AB02025DED1680048564B /* LoginSceneBuilder.swift */; };
 		B99465AA25DECADD00A74A4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99465A925DECADD00A74A4F /* AppDelegate.swift */; };
 		B99465AC25DECADD00A74A4F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99465AB25DECADD00A74A4F /* SceneDelegate.swift */; };
@@ -71,6 +74,9 @@
 		B922CBD625E4A38700F52380 /* NewPostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostPresenter.swift; sourceTree = "<group>"; };
 		B922CBD925E4A53800F52380 /* NewPostViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewProtocol.swift; sourceTree = "<group>"; };
 		B922CBDC25E4A8A900F52380 /* NewPostPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostPresenterProtocol.swift; sourceTree = "<group>"; };
+		B922CBE125E4E38100F52380 /* PostPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresentationModel.swift; sourceTree = "<group>"; };
+		B922CBE525E4F58200F52380 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		B922CBE825E5009200F52380 /* StringFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormater.swift; sourceTree = "<group>"; };
 		B95AB02025DED1680048564B /* LoginSceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneBuilder.swift; sourceTree = "<group>"; };
 		B99465A625DECADD00A74A4F /* Vidstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vidstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B99465A925DECADD00A74A4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +126,7 @@
 				B922CB8525E0AC8200F52380 /* PostsTableViewController.swift */,
 				B922CB8625E0AC8200F52380 /* PostsTableViewController.xib */,
 				B922CB9525E0AE5600F52380 /* PostsViewProtocol.swift */,
+				B922CBE525E4F58200F52380 /* PostTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				B922CBAA25E182A700F52380 /* EmailUtils.swift */,
+				B922CBE825E5009200F52380 /* StringFormater.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -193,6 +201,7 @@
 		B922CBC825E4942A00F52380 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B922CBE025E4E35F00F52380 /* Presentation Models */,
 				B922CBC925E4944000F52380 /* Post.swift */,
 			);
 			path = Models;
@@ -213,6 +222,14 @@
 				B922CBDC25E4A8A900F52380 /* NewPostPresenterProtocol.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B922CBE025E4E35F00F52380 /* Presentation Models */ = {
+			isa = PBXGroup;
+			children = (
+				B922CBE125E4E38100F52380 /* PostPresentationModel.swift */,
+			);
+			path = "Presentation Models";
 			sourceTree = "<group>";
 		};
 		B95AB01E25DED1360048564B /* View */ = {
@@ -390,6 +407,7 @@
 				B922CB8725E0AC8200F52380 /* PostsTableViewController.swift in Sources */,
 				B95AB02125DED1680048564B /* LoginSceneBuilder.swift in Sources */,
 				B99465AA25DECADD00A74A4F /* AppDelegate.swift in Sources */,
+				B922CBE925E5009200F52380 /* StringFormater.swift in Sources */,
 				B922CBDD25E4A8A900F52380 /* NewPostPresenterProtocol.swift in Sources */,
 				B922CB9625E0AE5600F52380 /* PostsViewProtocol.swift in Sources */,
 				B922CBCE25E4967C00F52380 /* FirebaseCloudFirestoreService.swift in Sources */,
@@ -397,6 +415,7 @@
 				B922CBB825E461FD00F52380 /* NewPostViewController.swift in Sources */,
 				B922CBAF25E4577D00F52380 /* StorageService.swift in Sources */,
 				B922CB8C25E0ACB400F52380 /* PostsSceneBuilder.swift in Sources */,
+				B922CBE225E4E38100F52380 /* PostPresentationModel.swift in Sources */,
 				B922CBAB25E182A700F52380 /* EmailUtils.swift in Sources */,
 				B922CBA725E0F40500F52380 /* FirebaseAuthService.swift in Sources */,
 				B922CBA325E0F2C000F52380 /* AuthService.swift in Sources */,
@@ -409,6 +428,7 @@
 				B922CBD725E4A38700F52380 /* NewPostPresenter.swift in Sources */,
 				B922CB8025E03E4A00F52380 /* LoginPresenterProtocol.swift in Sources */,
 				B922CBCA25E4944000F52380 /* Post.swift in Sources */,
+				B922CBE625E4F58200F52380 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

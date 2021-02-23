@@ -18,9 +18,11 @@ class FirebaseCloudFirestoreService: DatabaseService {
     func create(post: Post, complition: @escaping (Bool) -> ()) {
         db.collection(FirebaseCloudFirestoreService.postsCollection).addDocument(data: [
             "title": post.title,
-            "creator": post.creator
-        ]) { err in
-            complition(err == nil)
+            "creator": post.creator,
+            "creatorName": post.creatorName,
+            "creaated": NSDate().timeIntervalSinceNow
+        ]) { error in
+            complition(error == nil)
         }
     }
 }
