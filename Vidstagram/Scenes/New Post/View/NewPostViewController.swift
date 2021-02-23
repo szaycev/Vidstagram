@@ -32,6 +32,7 @@ class NewPostViewController: UIViewController {
     }
     
     @IBAction func selectVideo(_ sender: UIButton) {
+        
     }
     
     

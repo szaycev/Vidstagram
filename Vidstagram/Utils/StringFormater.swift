@@ -14,7 +14,7 @@ class StringFormater {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US")
         formatter.dateFormat = format
-        let date = Date(timeIntervalSince1970: timestamp / 1000)
+        let date = Date(timeIntervalSince1970: timestamp)
         return formatter.string(from: date)
     }
 }

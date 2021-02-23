@@ -20,7 +20,7 @@ class FirebaseCloudFirestoreService: DatabaseService {
             "title": post.title,
             "creator": post.creator,
             "creatorName": post.creatorName,
-            "creaated": NSDate().timeIntervalSinceNow
+            "creaated": NSDate().timeIntervalSince1970
         ]) { error in
             complition(error == nil)
         }

@@ -6,13 +6,25 @@
 //
 
 import UIKit
+import AVKit
 
 class PostTableViewCell: UITableViewCell {
     
     static let cellIdentifier = "PostTableViewCell"
     
-    // MARK: Views
-    let stackView: UIStackView = {
+    
+    //MARK: - Properties
+    private var player: AVPlayer? = nil
+    
+    var isVideoPlaying: Bool = false {
+        didSet {
+            isVideoPlaying ? player?.play() : player?.pause()
+        }
+    }
+    
+    
+    // MARK: - Views
+    private let stackView: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.spacing = 4
@@ -51,6 +63,18 @@ class PostTableViewCell: UITableViewCell {
         return label
     }()
     
+    private var videoView = UIView()
+    
+    func updateVideoView(with url: URL = URL(string: "https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4")!) {
+        videoView.translatesAutoresizingMaskIntoConstraints = false
+        let videoSize = UIScreen.main.bounds.size.width - 16
+        player = AVPlayer(url: url)
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.videoGravity = .resizeAspectFill
+        playerLayer.frame = .init(origin: .zero, size: CGSize(width: videoSize, height: videoSize))
+        videoView.layer.addSublayer(playerLayer)
+    }
+    
     
     // MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -62,14 +86,16 @@ class PostTableViewCell: UITableViewCell {
         stackView.addArrangedSubview(titleLabel)
         headerStackView.addArrangedSubview(usernameLabel)
         headerStackView.addArrangedSubview(timeLabel)
+        stackView.addArrangedSubview(videoView)
+        
         
         NSLayoutConstraint.activate([
-//            heightAnchor.constraint(greaterThanOrEqualToConstant: 15),
-            
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            videoView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width - 16),
+            videoView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width - 16)
         ])
     }
     
@@ -92,6 +118,7 @@ class PostTableViewCell: UITableViewCell {
         titleLabel.text = post.title
         usernameLabel.text = post.creatorName
         timeLabel.text = post.publicationDate
+        updateVideoView()
         return self
     }
 }
